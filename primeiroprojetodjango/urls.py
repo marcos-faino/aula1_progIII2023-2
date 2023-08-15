@@ -18,7 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 
+
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('<idade>/<nome>', views.index),
+    path('', views.index),
+    path('<nome>', views.indexcomnome),
+    path('<int:num1>/<int:num2>', views.soma),
+    path('viewcomclasse/<nome>', views.IndexView.as_view(), name='index'),
 ]
